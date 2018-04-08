@@ -6,10 +6,10 @@ acquire air quality data from sensors using raspberry pi
 # SUPPORTED SENSORS
 - BME280
   - temperature
-  - humidity
-  - pressure
+  - humidity
+  - pressure
 - MH-Z19B
-  - co2
+  - co2
 
 # PRE-REQUESTIES
 - install libraries
