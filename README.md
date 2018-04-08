@@ -20,5 +20,26 @@ sudo python air_sensor.py
 ```
 # OUTPUT EXAMPLE
 ```
-{"pressure": {"sensor": "BME280", "unit": "hPa", "value": 1016.6021547924195}, "co2": {"sensor": "MH-Z19B", "unit": "ppm", "value": 1244}, "temperature": {"sensor": "BME280", "unit": "celsius", "value": 26.80997100791428}, "humidity": {"sensor": "BME280", "unit": "%", "value": 40.38159699446065}}
+{
+   "co2" : {
+      "unit" : "ppm",
+      "sensor" : "MH-Z19B",
+      "value" : 1471
+   },
+   "pressure" : {
+      "sensor" : "BME280",
+      "unit" : "hPa",
+      "value" : 1016.78853362804
+   },
+   "humidity" : {
+      "sensor" : "BME280",
+      "unit" : "%",
+      "value" : 44.0666633123459
+   },
+   "temperature" : {
+      "value" : 26.8403380069882,
+      "unit" : "celsius",
+      "sensor" : "BME280"
+   }
+}
 ```
