@@ -8,6 +8,9 @@
 # 
 # # enable serial on your raspberry pi before use
 # sudo raspi-config nonint do_serial 0
+# # chmod read/write access of ttyS0 to let user use it
+# sudo chmod g+rw /dev/ttyS0
+# sudo usermod -a -G tty pi
 import serial
 import time
 import subprocess
