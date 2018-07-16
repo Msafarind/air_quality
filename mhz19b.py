@@ -8,9 +8,6 @@
 # 
 # # enable serial on your raspberry pi before use
 # sudo raspi-config nonint do_serial 0
-# # chmod read/write access of ttyS0 to let user use it
-# sudo chmod g+rw /dev/ttyS0
-# sudo usermod -a -G tty pi
 import serial
 import time
 import subprocess
@@ -60,5 +57,10 @@ class mhz19b():
       result=ser.write("\xff\x01\x87\x00\x00\x00\x00\x00\x78")
       s=ser.read(9)
     finally:
-        subprocess.call(start_getty, stdout=subprocess.PIPE, shell=True)
+      subprocess.call(start_getty, stdout=subprocess.PIPE, shell=True)
 
+  def get_checksum(self, packets):
+    packets = bytearray([0xFF, 0x01, 0x86, 0x00, 0x00, 0x00, 0x00, 0x00, 0x79])
+    packets = bytearray([0xFF, 0x01, 0x87, 0x00, 0x00, 0x00, 0x00, 0x00, 0x79])
+    checksum = (0xFF - ((packets[1]+packets[2]+packets[3]+packets[4]+packets[5]+packets[6]+packets[7])% 256))+1
+    return checksum
